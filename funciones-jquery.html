@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Funciones jQuery </title>
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function() {
+                console.log('El documento está listo!');
+                $('#claseClick').click(function() {
+                    console.log('boton Click ha sido clickeado');
+                    alert("Haz clickeado un boton");
+                })
+
+                $('#claseHide').click(function() {
+                    console.log('boton Hide ha sido clickeado');
+                    $('#parrafo2').hide();
+                })
+
+                $('#claseShow').click(function() {
+                    console.log('boton Show ha sido clickeado');
+                    $('#parrafo2').show();
+                })
+
+                $('#claseToggle').click(function() {
+                    console.log('boton toggle ha sido clickeado');
+                    $('#parrafo4').toggle();
+                })
+
+                $('#claseslideDown').click(function() {
+                    console.log('boton Slide down ha sido clickeado');
+                    $('#parrafo5').slideDown();
+                })
+
+                $('#claseslideUp').click(function() {
+                    console.log('boton Slide down ha sido clickeado');
+                    $('#parrafo5').slideUp();
+                })
+
+                $('#claseslideToggle').click(function() {
+                    console.log('boton slideToggle ha sido clickeado');
+                    $('#parrafo6').slideToggle();
+                })
+                
+                $('#clasefadeIn').click(function() {
+                    console.log('boton Slide down ha sido clickeado');
+                    $('#parrafo7').fadeIn(3000);
+                })
+
+                $('#clasefadeOut').click(function() {
+                    console.log('boton Slide down ha sido clickeado');
+                    $('#parrafo7').fadeOut(3000);
+                })
+                
+                $('#claseaddClass').click(function() {
+                    console.log('boton Slide down ha sido clickeado');
+                    $('#parrafo8').addClass("changeColor");
+                })
+
+                $('#claseremoveClass').click(function() {
+                    console.log('boton Slide down ha sido clickeado');
+                    $('#parrafo8').removeClass("changeColor");
+                })
+
+                $('#clasebefore').click(function() {
+                    console.log('boton Slide down ha sido clickeado');
+                    $('#parrafo9').before('<p>Hola Mundo</p>');
+                })
+
+                $('#claseafter').click(function() {
+                    console.log('boton Slide down ha sido clickeado');
+                    $('#parrafo9').after('<p>Esto ha sido agregado después con el metodo after</p>');
+                })
+
+                $('#claseappend').click(function() {
+                    console.log('boton Slide down ha sido clickeado');
+                    $('#parrafo10').append('<p>Hola Mundo</p>');
+                })
+
+                $('#claseappend2').click(function() {
+                    console.log('boton Slide down ha sido clickeado');
+                    $('ol').append('<li>Nuevo texto enumerado</li>');
+                })
+
+                $('#clasehtml').click(function() {
+                    console.log('boton slideToggle ha sido clickeado');
+                    $('#parrafo11').html('<span style="color: red;"> Hola <b>de nuevo </b></span>');
+                })
+
+                $('#claseattr').click(function() {
+                    console.log('boton slideToggle ha sido clickeado');
+
+                    $('.parrafo12').attr('class','changeColor');
+                })
+
+                $( "input" ).keyup(function() {
+                    var value = $( this ).val();
+                    $( "#parrafo13" ).text( value );
+                     })
+                .keyup();
+                
+                $('#clasetext').click(function() {
+                    console.log('boton text ha sido clickeado');
+                    var str = $('#parrafo14').text();
+                    $('#parrafo15').text(str);
+                })
+            })
+
+
+        </script>
+
+        <style>
+            body *{outline: 1px solid red;
+                margin-top: 20px;
+            
+            }
+
+            button { 
+                margin-left: 35%;
+                margin-top: 10%;
+            }
+
+            h1, p, input {
+                text-align: center;
+            }
+
+            .changeColor {
+                color: blue;
+                font-size: 150%;
+            }
+
+            .parrafo12 {
+                color:  yellow;
+                font-size: 200%;
+            }
+            
+            #parrafo15 {
+                color:red;
+            }
+
+
+        </style>
+ 
+
+
+    </head>
+
+    <body>
+        <div class="row">
+            <div class="col-lg-3">
+                <button type="button" class="btn btn-primary" id="claseClick">.click </button>
+            </div>
+            <div class="col-lg-9">
+                <h1>.click</h1>
+                <p id="parrafo1">muestra que sucede cuando se utiliza .click </p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <button type="button" class="btn btn-primary" id="claseHide">.hide </button>
+                <button type="button" class="btn btn-primary" id="claseShow">.show </button>
+            </div>
+
+            <div class="col-lg-9">
+                <h1>.hide()</h1>
+                <p id="parrafo2">muestra que sucede cuando se utiliza .hide(), como por ejemplo $('p').hide(); </p>
+                <p id="parrafo3">muestra que sucede cuando se utiliza .show(), como por ejemplo $('p').show(); </p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <button type="button" class="btn btn-primary" id="claseToggle">.toggle </button>
+            </div>
+            <div class="col-lg-9">
+                <h1>.toggle()</h1>
+                <p id="parrafo4">muestra que sucede cuando se utiliza .toggle(), como por ejemplo $('p').toggle();</p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <button type="button" class="btn btn-primary" id="claseslideDown">.slideDown </button>
+                <button type="button" class="btn btn-primary" id="claseslideUp">.slideUp </button>
+            </div>
+            <div class="col-lg-9">
+                <h1>.slideDown() y .slideUp()</h1>
+                <p id="parrafo5">muestra que sucede cuando se utiliza .slideDown, como por ejemplo $('p').slideDown() y $('p').slideUp();</p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <button type="button" class="btn btn-primary" id="claseslideToggle">.slidetoggle </button>
+            </div>
+            <div class="col-lg-9">
+                <h1>.slidetoggle()</h1>
+                <p id="parrafo6">muestra que sucede cuando se utiliza .slideToggle(), como por ejemplo $('p').slidetoggle();</p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <button type="button" class="btn btn-primary" id="clasefadeIn">.fadeIn </button>
+                <button type="button" class="btn btn-primary" id="clasefadeOut">.fadeOut </button>
+            </div>
+            <div class="col-lg-9">
+                <h1>.fadeIn() y .fadeOut()</h1>
+                <p id="parrafo7">muestra que sucede cuando se utiliza .fadeIn() y .fadeOut() como por ejemplo $('p').fadeOut(3000);</p>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-3">
+                <button type="button" class="btn btn-danger" id="claseaddClass">.addClass() </button>
+                <button type="button" class="btn btn-danger" id="claseremoveClass">.removeClass() </button>
+            </div>
+            <div class="col-lg-9">
+                <h1>.addClass() y .removeClass() </h1>
+                <p id="parrafo8">muestra que sucede cuando se utiliza .addClass() y .removeClass()  como por ejemplo $('p').addClass("changeColor");</p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <button type="button" class="btn btn-success" id="clasebefore">.before() </button>
+                <button type="button" class="btn btn-success" id="claseafter">.after() </button>
+            </div>
+            <div class="col-lg-9">
+                <h1>.before() y .after</h1>
+                <p id="parrafo9">muestra que sucede cuando se utiliza .before(), al apretar el boton, aparecera "Hola mundo" antes
+                    Como ejemplo $('.claseDeEsteParrafo').before(codigo en html)</p>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-3">
+                <button type="button" class="btn btn-dark" id="claseappend">.append() </button>
+                <button type="button" class="btn btn-secondary" id="claseappend2">.append() </button>
+            </div>
+            <div class="col-lg-9">
+                <h1>.append() </h1>
+                <p id="parrafo10">muestra que sucede cuando se utiliza .append(), al apretar el boton negro, aparecera "Hola mundo" despues
+                    de este parrafo. Como ejemplo $('.claseDeEsteParrafo').append(codigo en html) </p>
+
+                <ol>
+                    <li>List item 1</li>
+                    <li>List item 2</li>
+                    <li>List item 3</li>
+                </ol>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <button type="button" class="btn btn-primary" id="clasehtml">.html() </button>
+            </div>
+            <div class="col-lg-9">
+                <h1>.html()</h1>
+                <p>muestra que sucede cuando se utiliza .html(), como por ejemplo $('p').html('texto en html');</p>
+                <p id="parrafo11">Esto cambiará</p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <button type="button" class="btn btn-primary" id="claseattr">.attr() </button>
+            </div>
+            <div class="col-lg-9">
+                <h1>.attr()</h1>
+                <p>muestra que sucede cuando se utiliza .attr(), como por ejemplo $('clase_antigua').attr('clase=nueva_clase'); 
+                    esto permite cambiar la clase del parrafo. Se pueden cambiar todos los atributos de la etiqueta
+                </p>
+                <p class="parrafo12">Esto cambiará por otra clase</p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <button type="button" class="btn btn-danger" id="claseval">.val() </button>
+            </div>
+            <div class="col-lg-9">
+                <h1>.val()</h1>
+                <p>muestra que sucede cuando se utiliza .val()</p>
+                <input type="text" value="Escribe algo aqu">
+                <p id="parrafo13"></p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <button type="button" class="btn btn-secondary" id="clasetext"> .text() </button>
+            </div>
+            <div class="col-lg-9">
+                <h1>.text()</h1>
+                <p>muestra que sucede cuando se utiliza .text()</p>
+                <p id="parrafo14"><b>Test</b> Paragraph.</p>
+                <p id="parrafo15"></p>
+                <p>Hola Mundo</p>
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </body>
